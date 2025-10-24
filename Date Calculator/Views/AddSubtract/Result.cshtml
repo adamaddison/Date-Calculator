@@ -1,0 +1,85 @@
+﻿@using Date_Calculator.Models.Shared
+@using Date_Calculator.View_Models.AddSubtract
+@using Microsoft.VisualBasic
+@model AddSubtractResultViewModel
+
+<header class="headerLight">Add & Subtract</header>
+
+<div class="viewContainer">
+    <div id="addSubtractResultContainer"">
+        <p class="infoBoxHeader">Result</p>
+        <div class="infoContainerLight">
+        @if(Model.Results.Count == 1)
+        {
+            <p id="singleResult">@Model.Results[0]</p>
+        }
+        else
+        {
+            @for(var i = 0; i < Model.Results.Count; i += 1)
+            {
+                @if(i == 0){ <span class="tableRowLight firstItem">@Model.Results[@i]</span> }
+                else{ <span class="tableRowLight">@Model.Results[@i]</span> }
+            }
+        }
+        </div>
+    </div>
+    
+    <div id="addSubtractInputContainer">
+        <form asp-controller="AddSubtract" asp-action="POST">
+
+                <div class="infoContainerLight" id="dateContainer">
+                    <div class="inputRow inputRowLight lastItem">
+                        <span class="textLight">Date</span>
+                        <input type="date" name="Date" id="addSubtractDateField" class="inputLight dateInput" onchange="saveAddSubtractInput()" />
+                    </div>
+                </div>
+
+                <div class="infoContainerLight" id="OperationTypeContainer" onclick="toggleOperationTypeDropdown()">
+                        <div class="dropDownValueAndInput">
+                            <span id="OperationTypeText" class="textLight">Add</span>
+                            <div class="dropDownButtonLight"><img src="openDropdownLight.svg" class="dropDownImage" id="OperationTypeDropDownImage" /></div>
+                        </div>
+                </div>
+                <div class="dropdownMenuLight" id="OperationTypeDropdownMenu">
+                    <div class="dropdownMenuItemLight" onclick="setOperationType(0)">Add</div>
+                    <div class="dropdownMenuItemLight lastItem" onclick="setOperationType(1)">Subtract</div>
+                </div>
+                <input type="hidden" name="OperationType" id="OperationType" value="0" onchange="saveAddSubtractInput()" />
+
+                <div class="infoContainerLight" id="lengthOfTimeContainer">
+                    <div class="lengthOfTimeInputRow">
+                        <div class="lengthOfTimeInputCell lengthOfTimeInputCellLeft">
+                            <span class="textLight">Days</span>
+                            <input type="number" min="0" value="0" name="LengthOfTimeDays" id="daysField" class="inputLight lengthOfTimeInputBox" onchange="saveAddSubtractInput()" />
+                        </div>
+                        <div class="lengthOfTimeInputCell">
+                            <span class="textLight">Weeks</span>
+                            <input type="number" min="0" value="0" name="LengthOfTimeWeeks" id="weeksField" class="inputLight lengthOfTimeInputBox" onchange="saveAddSubtractInput()" />
+                        </div>
+                    </div>
+                    <div class="lengthOfTimeInputRow">
+                        <div class="lengthOfTimeInputCell lengthOfTimeInputCellLeft  lengthOfTimeInputCellBottom">
+                            <span class="textLight">Months</span>
+                            <input type="number" min="0" value="0" name="LengthOfTimeMonths" id="monthsField" class="inputLight lengthOfTimeInputBox" onchange="saveAddSubtractInput()" />
+                        </div>
+                        <div class="lengthOfTimeInputCell  lengthOfTimeInputCellBottom">
+                            <span class="textLight">Years</span>
+                            <input type="number" min="0" value="0" name="LengthOfTimeYears" id="yearsField" class="inputLight lengthOfTimeInputBox" onchange="saveAddSubtractInput()" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="infoContainerLight" id="repeatContainer">
+                    <div class="inputRow inputRowLight lastItem">
+                        <span class="textLight">Repeat</span>
+                        <input type="number" min="0" max="10000" value="0" name="Repeat" id="addSubtractRepeatField" class="inputLight repeatInput" onchange="saveAddSubtractInput()" />
+                    </div>
+                </div>
+
+                <input type="submit" value="Calculate" class="buttonLight" id="buttonAddSubtractCalculate" />
+
+        </form>
+    </div>
+</div>
+
+<partial name="_TabBarPartial" model="TabValue.AddSubtract" />

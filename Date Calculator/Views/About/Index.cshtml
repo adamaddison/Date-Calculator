@@ -1,0 +1,34 @@
+﻿@using Date_Calculator.Models.Shared
+@using Date_Calculator.View_Models.AddSubtract
+@using Microsoft.VisualBasic
+
+<header class="headerLight">About</header>
+
+<div class="viewContainer">
+    <div id="aboutContainer">
+        <div class="infoContainerLight">
+            <div class="twoColumnRowLight firstItem">
+                <span class="twoColumnRowCol1">Date Calculator Version</span>
+                <span class="twoColumnRowCol2">1.0</span>
+            </div>
+            <div class="twoColumnRowLight">
+                <span class="twoColumnRowCol1">.NET</span>
+                <span class="twoColumnRowCol2">9.0</span>
+            </div>
+        </div>
+        <div class="infoContainerLight" id="themeContainer" onclick="toggleThemeDropdown()">
+            <span class="textLight">Theme</span>
+            <div class="dropDownValueAndInput">
+                <span id="themeText" class="textLight">Light</span>
+                <div class="dropDownButtonLight"><img src="openDropdownLight.svg" class="dropDownImage" id="themeDropDownImage" /></div>
+            </div>
+        </div>
+        <div class="dropdownMenuLight" id="themeDropdownMenu">
+            <div class="dropdownMenuItemLight" onclick="setTheme(0)">Light</div>
+            <div class="dropdownMenuItemLight" onclick="setTheme(1)">Dark</div>
+            <div class="dropdownMenuItemLight lastItem" onclick="setTheme(2)">Auto / System</div>
+        </div>
+    </div>
+</div>
+
+<partial name="_TabBarPartial" model="TabValue.About" />

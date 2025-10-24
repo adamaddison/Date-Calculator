@@ -1,0 +1,37 @@
+﻿@using Date_Calculator.Models.Shared
+@model DateToDateErrorViewModel
+
+<header class="headerLight">Date-to-Date</header>
+
+<div class="viewContainer">
+    <div id="dateToDateResultContainer"">
+        <p class="infoBoxHeader">Result</p>
+        <div class="infoContainerLight">
+            <p id="errors" class="textLight">Errors:</p>
+            <ul>
+            @foreach(string error in Model.ErrorMessages)
+            {
+                <li class="textLight">@error</li>
+            }
+            </ul>
+        </div>
+    </div>
+    
+    <div id="dateToDateInputContainer">
+        <form asp-controller="DateToDate" asp-action="POST">
+                <div class="infoContainerLight">
+                    <div class="inputRow inputRowLight">
+                        <span class="textLight">Start Date</span>
+                        <input type="date" name="startDate" id="startDate" class="inputLight dateInput" onchange="saveDateToDateInput()" />
+                    </div>
+                    <div class="inputRow inputRowLight lastItem">
+                        <span class="textLight">End Date</span>
+                        <input type="date" name="endDate" id="endDate" class="inputLight dateInput" onchange="saveDateToDateInput()" />
+                    </div>
+                </div>
+                <input type="submit" value="Calculate" class="buttonLight" id="buttonDateToDateCalculate" />
+        </form>
+    </div>
+</div>
+
+<partial name="_TabBarPartial" model="TabValue.DateToDate" />

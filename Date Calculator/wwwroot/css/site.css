@@ -1,0 +1,598 @@
+html
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+}
+
+header
+{
+  font-size: 14pt;
+  font-weight: bold;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 12px;
+  height: 45px
+}
+.headerLight
+{
+  background-color: #fff;
+  color: #000;
+  border-bottom: 1px solid lightgray;
+}
+.headerDark
+{
+  background-color: #434343;
+  color: #fff;
+  border-bottom: 1px solid rgb(111,111,111)
+}
+
+@media (min-width: 850px)
+{
+  #appContainer
+  {
+    position: absolute;
+    width: 850px;
+    left: 50%;
+    height: 100%;
+    transform: translateX(-50%);
+    top: 0px;
+  }
+}
+
+@media (max-width: 850px)
+{
+  #appContainer
+  {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+  }
+}
+
+.appContainerLight
+{
+  background-color: #f1f1f1;
+}
+.appContainerDark
+{
+  background-color: #000;
+}
+
+.viewContainer
+{
+  position: absolute;
+  top: 45px;
+  height: calc(100% - 90px);
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+#dateToDateResultContainer, #addSubtractResultContainer
+{
+  position: relative;
+  max-height: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-y: scroll
+}
+.infoBoxHeader
+{
+  font-size: 12pt;
+  color: gray;
+  margin: 0
+}
+#daysResult
+{
+  text-align: center;
+  font-size: 16pt;
+  font-weight: bold;
+}
+#otherFormats
+{
+  font-size: 11pt;
+  margin: 5px;
+}
+#dateToDateInputContainer, #addSubtractInputContainer, #aboutContainer
+{
+  position: absolute;
+  max-height: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+  width: calc(100% - 10px);
+  bottom: 5px;
+  overflow-y: scroll;
+}
+.inputRow
+{
+  width: 100%;
+  padding: 9px;
+  box-sizing: border-box;
+  position: relative;
+}
+.inputRowLight
+{
+  border-bottom: 1px solid lightgrey;
+}
+.inputRowDark
+{
+  border-bottom: 1px solid rgb(111,111,111);
+}
+.lastItem
+{
+  border-bottom: 0px !important
+}
+.firstItem
+{
+  border-top: 0px !important
+}
+.dateInput, .repeatInput
+{
+  position: absolute;
+  width: 50%;
+  min-width: 50%;
+  height: 22px;
+  min-height: 22px;
+  appearance: none;
+  right: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10pt;
+  font-family: sans-serif;
+  text-align: center;
+}
+#buttonDateToDateCalculate
+{
+  margin-top: 5px;
+  width: 100%;
+  position: relative;
+}
+
+.inputLight
+{
+  box-sizing: border-box;
+  border: 2px solid rgb(170,170,170);
+  border-radius: 4px;
+  color: #000;
+  background-color: #fff;
+}
+.inputDark
+{
+  box-sizing: border-box;
+  border: 2px solid rgb(170,170,170);
+  border-radius: 4px;
+  color: #fff;
+  background-color: #434343;
+}
+
+.buttonLight
+{
+  width: 100%;
+  background: linear-gradient(180deg,#95c8ff,#0072ec);
+  color: #fff;
+  padding: 4px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: 700;
+  font-size: 12pt;
+  border: 1px solid rgb(0,114,236);
+  box-shadow: 0 1px #d5eaff inset,0 1px #d5eaff inset;
+}
+.buttonDark
+{
+  width: 100%;
+  background: linear-gradient(180deg,#67b0ff,#005aba);
+  color: #fff;
+  padding: 4px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: 700;
+  font-size: 12pt;
+  border: 1px solid rgb(0,110,228);
+  box-shadow: 0 1px #c3e0ff inset,0 1px #c3e0ff inset;
+}
+.dropDownButtonLight
+{
+  background: linear-gradient(#ececec,#9e9e9e);
+  color: #000;
+  padding: 4px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: 700;
+  font-size: 12pt;
+  border: 1px solid #9e9e9e;
+  box-shadow: 0 1px #fff inset,0 1px #fff inset;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  margin: 0;
+  transform: translateY(-50%);
+}
+.dropDownButtonDark
+{
+  background: linear-gradient(#717171,#000);
+  color: #fff;
+  padding: 4px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: 700;
+  font-size: 12pt;
+  border: 1px solid #000;
+  box-shadow: 0 1px #b7b7b7 inset,0 1px #b7b7b7 inset;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  margin: 0;
+  transform: translateY(-50%);
+}
+
+.dropDownContent
+{
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  transform: translateY(-50%)
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.infoContainerLight
+{
+  position: relative;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #c2c2c2;
+  color: #000;
+}
+.infoContainerDark
+{
+  position: relative;
+  background-color: #434343;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid rgb(111,111,111);
+  color: #fff;
+}
+
+.textLight
+{
+  color: #000;
+}
+.textDark
+{
+  color: #fff;
+}
+
+.tableRowLight
+{
+  border-top: 1px solid lightgray;
+  padding: 4px;
+  font-size: 12pt;
+  color: #000;
+  display: block;
+  text-align: center;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.tableRowDark
+{
+  border-top: 1px solid rgb(111,111,111);
+  padding: 4px;
+  font-size: 12pt;
+  color: #fff;
+  display: block;
+  text-align: center;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.twoColumnRowLight
+{
+  border-top: 1px solid lightgray;
+  padding: 4px;
+  font-size: 12pt;
+  color: #000;
+  display: block;
+  margin-left: 8px;
+  margin-right: 8px;
+  position: relative
+}
+.twoColumnRowDark
+{
+  border-top: 1px solid rgb(111,111,111);
+  padding: 4px;
+  font-size: 12pt;
+  color: #fff;
+  display: block;
+  margin-left: 8px;
+  margin-right: 8px;
+  position: relative
+}
+.twoColumnRowCol1
+{
+  display: block;
+  left: 5px
+}
+.twoColumnRowCol2
+{
+  display: block;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#errors
+{
+  text-align: center;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+#tabBar
+{
+  padding: 2px;
+  height: 45px;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  bottom: 0px;
+  display: flex;
+  flex-flow: row;
+}
+.tabBarLight
+{
+  background: linear-gradient(#fff, #c7c7c7);
+  border-top: 1px solid lightgray
+}
+.tabBarDark
+{
+  background: linear-gradient(#7e7e7e, #000000);
+  border-top: 1px solid rgb(111,111,111)
+}
+
+.tabContainer
+{
+  width: 100%;
+  height: 100%;
+  flex: 1 1 auto;
+  padding: 2px;
+  box-sizing: border-box;
+}
+#dateToDateTab, #addSubtractTab
+{
+  border-radius: 0px;
+  border-right: 1px solid;
+  border-image: linear-gradient(#8f8f8f00, #8f8f8f 50%, #8f8f8f00 100%) 0 100%;
+}
+
+.tabValueLight
+{
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: 100%;
+  position: relative
+}
+.tabValueSelectedLight
+{
+  border: 1px solid #e3e3e3;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background: linear-gradient(#bbb, #fff);
+  height: 100%;
+  position: relative;
+  box-shadow: 1px 1px 7px -1px #6d6d6d inset, -1px -1px 7px -1px #6d6d6d inset;
+  position: relative
+}
+
+.tabValueDark
+{
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: 100%;
+  position: relative
+}
+.tabValueSelectedDark
+{
+  border: 1px solid #7e7e7e;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background: linear-gradient(#000, #aaa);
+  height: 100%;
+  position: relative;
+  box-shadow: 1px 1px 7px -1px #444 inset, -1px -1px 7px -1px #444 inset;
+  position: relative;
+}
+
+.tabText
+{
+  display: block;
+  text-decoration: none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: max-content;
+}
+
+#addSubtractResultList
+{
+  text-align: center;
+}
+
+#OperationTypeContainer
+{
+  width: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 36px;
+}
+
+.dropdownMenuLight
+{
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 7px 7px 30px #73737366,-7px -7px 30px #73737366;
+  transition: visibility .3s ease-out,opacity .3s ease-out;
+  visibility: hidden;
+  opacity: 0%;
+  z-index: 1;
+  border: 1px solid #c2c2c2;
+  box-sizing: border-box;
+  margin-top: -5px
+}
+.dropdownMenuItemLight
+{
+  width: 100%;
+  padding: 9px;
+  border-bottom: 1px solid lightgrey;
+  box-sizing: border-box;
+  position: relative;
+}
+.dropdownMenuItemDark
+{
+  width: 100%;
+  padding: 9px;
+  border-bottom: 1px solid rgb(111,111,111);
+  box-sizing: border-box;
+  position: relative;
+}
+.dropdownMenuDark
+{
+  position: absolute;
+  background-color: #434343;
+  color: #fff;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 7px 7px 30px #0006,-7px -7px 30px #0006;
+  transition: visibility .3s ease-out,opacity .3s ease-out;
+  visibility: hidden;
+  opacity: 0%;
+  z-index: 1;
+  border: 1px solid rgb(111,111,111);
+  box-sizing: border-box;
+  margin-top: -5px
+}
+
+.dropDownImage
+{
+  width: 100%;
+}
+
+.elementAppear
+{
+  visibility: visible !important;
+  opacity: 100% !important;
+}
+
+#dateContainer, #OperationTypeContainer, #lengthOfTimeContainer, #repeatContainer
+{
+  margin-bottom: 5px;
+}
+
+#lengthOfTimeContainer
+{
+  padding: 9px
+}
+
+#themeContainer
+{
+  padding: 7px;
+  margin-top: 5px
+}
+
+.lengthOfTimeInputRow
+{
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+  position: relative;
+}
+.lengthOfTimeInputCell
+{
+  flex: 1 1 auto;
+  border-radius: 8px;
+  width: 100%;
+  padding-bottom: 7px;
+  padding-left: 7px;
+  position: relative
+}
+.lengthOfTimeInputBox
+{
+  position: absolute;
+  right: 0px;
+  width: 50%;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.lengthOfTimeInputCellLeft
+{
+  padding-left: 0px !important;
+}
+.lengthOfTimeInputCellBottom
+{
+    padding-bottom: 3px !important;
+}
+.lengthOfTimeInputCellBottom > span
+{
+  position: relative;
+  top: 3px;
+}
+
+#singleResult
+{
+  text-align: center;
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+.dropDownValueAndInput
+{
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.dropDownValueAndInput > span
+{
+  bottom: 0;
+  right: 37px;
+  position: relative;
+}
+
+#themeText
+{
+  color: #aaa;
+}
+
+#aboutContainer
+{
+  padding-top: 55px;
+}
+
+#themeDropdownMenu
+{
+  bottom: 0px;
+}

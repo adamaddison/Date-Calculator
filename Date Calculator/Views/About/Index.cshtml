@@ -18,15 +18,15 @@
         </div>
         <div class="infoContainerLight" id="themeContainer" onclick="toggleThemeDropdown()">
             <span class="textLight">Theme</span>
-            <div class="dropDownValueAndInput">
+            <div class="labelledDropDownValueAndInput">
                 <span id="themeText" class="textLight">Light</span>
                 <div class="dropDownButtonLight"><img src="openDropdownLight.svg" class="dropDownImage" id="themeDropDownImage" /></div>
             </div>
         </div>
         <div class="dropdownMenuLight" id="themeDropdownMenu">
-            <div class="dropdownMenuItemLight" onclick="setTheme(0)">Light</div>
-            <div class="dropdownMenuItemLight" onclick="setTheme(1)">Dark</div>
-            <div class="dropdownMenuItemLight lastItem" onclick="setTheme(2)">Auto / System</div>
+            <div class="dropdownMenuItemLight" onclick="setTheme(0);toggleThemeDropdown();">Light</div>
+            <div class="dropdownMenuItemLight" onclick="setTheme(1);toggleThemeDropdown();">Dark</div>
+            <div class="dropdownMenuItemLight lastItem" onclick="setAutoTheme();toggleThemeDropdown();">Auto / System</div>
         </div>
     </div>
 </div>

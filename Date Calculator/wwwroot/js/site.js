@@ -1,6 +1,10 @@
 ﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
 // for details on configuring this project to bundle and minify static web assets.
 var appTheme = 0;
+const LIGHT = 0;
+const DARK = 1;
+const ADD = 0;
+var appAutoTheme = false;
 // Write your JavaScript code.
 var saveDateToDateInput = function()
 {
@@ -39,7 +43,7 @@ var initialiseAddSubtractValues = function()
         $("#yearsField").val(localStorage["AddSubtract.lengthOfTimeYears"]);
         $("#addSubtractRepeatField").val(localStorage["AddSubtract.addSubtractRepeatField"]);
 
-        if($("#OperationType").val() == 0){ $("#OperationTypeText").html("Add") }
+        if($("#OperationType").val() == ADD){ $("#OperationTypeText").html("Add") }
         else{ $("#OperationTypeText").html("Subtract"); }
     }
 }
@@ -47,9 +51,21 @@ var initialiseTheme = function()
 {
     if(localStorage["DateCalculator.theme"] !== undefined)
     {
-        appTheme = localStorage["DateCalculator.theme"];
+        appTheme = parseInt(localStorage["DateCalculator.theme"]);
     }
-    setTheme(appTheme, false);
+    if(localStorage["DateCalculator.autoTheme"] !== undefined)
+    {
+        appAutoTheme = localStorage["DateCalculator.autoTheme"] === "true";
+    }
+
+    if(appAutoTheme)
+    {
+        setAutoTheme();
+    }
+    else
+    {
+        setTheme(appTheme);
+    }
 }
 $(document).ready(function(){
     initialiseDateToDateValues();
@@ -62,7 +78,7 @@ var toggleOperationTypeDropdown = function()
     if($("#OperationTypeDropdownMenu").css("visibility") == "hidden")
     {
         $("#OperationTypeDropdownMenu").addClass("elementAppear");
-        if(appTheme == 0)
+        if(appTheme == LIGHT)
         {
             $("#OperationTypeDropDownImage").attr("src", "closeDropdownLight.svg");
         }
@@ -74,7 +90,7 @@ var toggleOperationTypeDropdown = function()
     else
     {
         $("#OperationTypeDropdownMenu").removeClass("elementAppear");
-        if(appTheme == 0)
+        if(appTheme == LIGHT)
         {
             $("#OperationTypeDropDownImage").attr("src", "openDropdownLight.svg");
         }
@@ -88,7 +104,7 @@ var toggleOperationTypeDropdown = function()
 var setOperationType = function(operationType)
 {
     $("#OperationType").val(operationType);
-    if(operationType == 0){ $("#OperationTypeText").html("Add") }
+    if(operationType == ADD){ $("#OperationTypeText").html("Add") }
     else{ $("#OperationTypeText").html("Subtract"); }
 
     saveAddSubtractInput();
@@ -100,7 +116,7 @@ var toggleThemeDropdown = function()
     if($("#themeDropdownMenu").css("visibility") == "hidden")
     {
         $("#themeDropdownMenu").addClass("elementAppear");
-        if(appTheme == 0)
+        if(appTheme == LIGHT)
         {
             $("#themeDropDownImage").attr("src", "closeDropdownLight.svg");
         }
@@ -112,7 +128,7 @@ var toggleThemeDropdown = function()
     else
     {
         $("#themeDropdownMenu").removeClass("elementAppear");
-       if(appTheme == 0)
+       if(appTheme == LIGHT)
         {
             $("#themeDropDownImage").attr("src", "openDropdownLight.svg");
         }
@@ -123,9 +139,9 @@ var toggleThemeDropdown = function()
     }
 }
 
-var setTheme = function(theme, toggleMenu = true)
+var setTheme = function(theme)
 {
-    if(theme == 0)
+    if(theme == LIGHT)
     {
         var infoContainers = $(".infoContainerDark");
         infoContainers.removeClass("infoContainerDark");
@@ -167,9 +183,17 @@ var setTheme = function(theme, toggleMenu = true)
         tabBarSelected.removeClass("tabValueSelectedDark");
         tabBarSelected.addClass("tabValueSelectedLight");
 
+        var tabBarUnselected = $(".tabValueDark");
+        tabBarUnselected.removeClass("tabValueDark");
+        tabBarUnselected.addClass("tabValueLight");
+
         var inputs = $(".inputDark");
         inputs.removeClass("inputDark");
         inputs.addClass("inputLight");
+
+        var inputRows = $(".inputRowDark");
+        inputRows.removeClass("inputRowDark");
+        inputRows.addClass("inputRowLight");
 
         var buttons = $(".buttonDark");
         buttons.removeClass("buttonDark");
@@ -199,7 +223,7 @@ var setTheme = function(theme, toggleMenu = true)
 
         $("#themeText").html("Light");
     }
-    else if(theme == 1)
+    else if(theme == DARK)
     {
         var infoContainers = $(".infoContainerLight");
         infoContainers.removeClass("infoContainerLight");
@@ -237,13 +261,21 @@ var setTheme = function(theme, toggleMenu = true)
         tabBar.removeClass("tabBarLight");
         tabBar.addClass("tabBarDark");
 
-        var tabBarSelected = $(".tabValueSelectedLight")
+        var tabBarSelected = $(".tabValueSelectedLight");
         tabBarSelected.removeClass("tabValueSelectedLight");
         tabBarSelected.addClass("tabValueSelectedDark");
+
+        var tabBarUnselected = $(".tabValueLight");
+        tabBarUnselected.removeClass("tabValueLight");
+        tabBarUnselected.addClass("tabValueDark");
 
         var inputs = $(".inputLight");
         inputs.removeClass("inputLight");
         inputs.addClass("inputDark");
+
+        var inputRows = $(".inputRowLight");
+        inputRows.removeClass("inputRowLight");
+        inputRows.addClass("inputRowDark");
 
         var buttons = $(".buttonLight");
         buttons.removeClass("buttonLight");
@@ -273,11 +305,34 @@ var setTheme = function(theme, toggleMenu = true)
 
         $("#themeText").html("Dark");
     }
-    localStorage["DateCalculator.theme"] = theme;
+    
+    appAutoTheme = false;
+    localStorage["DateCalculator.autoTheme"] = false;
     appTheme = theme;
-
-    if(toggleMenu)
-    {
-        toggleThemeDropdown();
-    }
+    localStorage["DateCalculator.theme"] = theme;
 }
+
+setAutoTheme = function()
+{
+    var systemInLightMode = window.matchMedia('(prefers-color-scheme: light)');
+
+    if(systemInLightMode.matches)
+    {
+        setTheme(LIGHT);
+    }
+    else
+    {
+        setTheme(DARK);
+    }
+
+    appAutoTheme = true;
+    localStorage["DateCalculator.autoTheme"] = true;
+    $("#themeText").html("Auto / System");
+}
+
+window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (event) => {
+            if(appAutoTheme)
+            {
+                setAutoTheme();
+            }
+        });

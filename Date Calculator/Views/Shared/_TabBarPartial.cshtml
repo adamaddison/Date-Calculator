@@ -3,15 +3,15 @@
 
 <div id="tabBar" class="tabBarLight">
     <div class="tabContainer" id="dateToDateTab">
-        @if(Model == TabValue.DateToDate){<a asp-controller="DateToDate" asp-action="Result"><div class="tabValueSelectedLight"><span class="textLight tabText">Date-to-Date</span></div></a>}
-        else{<a asp-controller="DateToDate" asp-action="Result"><div class="tabValueLight"><span class="textLight tabText">Date-to-Date</span></div></a>}
+        @if(Model == TabValue.DateToDate){<a asp-controller="DateToDate" asp-action="Result"><div class="tabValueSelectedLight"><span class="tabText">Date-to-Date</span></div></a>}
+        else{<a asp-controller="DateToDate" asp-action="Result"><div class="tabValueLight"><span class="tabText">Date-to-Date</span></div></a>}
     </div>
     <div class="tabContainer" id="addSubtractTab">
-        @if(Model == TabValue.AddSubtract){<a asp-controller="AddSubtract" asp-action="Result"><div class="tabValueSelectedLight"><span class="textLight tabText">Add & Subtract</span></div></a>}
-        else{<a asp-controller="AddSubtract" asp-action="Result"><div class="tabValueLight"><span class="textLight tabText">Add & Subtract</span></div></a>}
+        @if(Model == TabValue.AddSubtract){<a asp-controller="AddSubtract" asp-action="Result"><div class="tabValueSelectedLight"><span class="tabText">Add & Subtract</span></div></a>}
+        else{<a asp-controller="AddSubtract" asp-action="Result"><div class="tabValueLight"><span class="tabText">Add & Subtract</span></div></a>}
     </div>
     <div class="tabContainer" id="aboutTab">
-        @if(Model == TabValue.About){<a asp-controller="About" asp-action="Index"><div class="tabValueSelectedLight"><span class="textLight tabText">About</span></div></a>}
-        else{<a asp-controller="About" asp-action="Index"><div class="tabValueLight"><span class="textLight tabText">About</span></div></a>}
+        @if(Model == TabValue.About){<a asp-controller="About" asp-action="Index"><div class="tabValueSelectedLight"><span class="tabText">About</span></div></a>}
+        else{<a asp-controller="About" asp-action="Index"><div class="tabValueLight"><span class="tabText">About</span></div></a>}
     </div>
 </div>

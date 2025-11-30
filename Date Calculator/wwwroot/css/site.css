@@ -521,7 +521,8 @@ html {
 #themeContainer
 {
   padding: 7px;
-  margin-top: 5px
+  margin-top: 5px;
+  height: 36px
 }
 
 .lengthOfTimeInputRow

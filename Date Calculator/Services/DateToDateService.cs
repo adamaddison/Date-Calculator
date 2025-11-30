@@ -22,7 +22,7 @@ public class DateToDateService : IDateToDateService
 
         var viewModel = new DateToDateResultViewModel()
         {
-            DaysResult = endDateMinusStartDate.Days == 1 ? endDateMinusStartDate.Days + " Day" : endDateMinusStartDate.Days + " Days",
+            DaysResult = endDateMinusStartDate.Days == 1 ? endDateMinusStartDate.Days + " day" : endDateMinusStartDate.Days + " days",
             WeeksResult = GetWeeksResult(endDateMinusStartDate.Days),
             MonthsResult = GetMonthsResult(endDateMinusStartDate.Days),
             YearsResult = GetYearsResult(endDateMinusStartDate.Days),

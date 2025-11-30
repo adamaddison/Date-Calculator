@@ -155,6 +155,7 @@ header
   border-radius: 4px;
   color: #000;
   background-color: #fff;
+  font-size: 16pt;
 }
 .inputDark
 {
@@ -163,6 +164,7 @@ header
   border-radius: 4px;
   color: #fff;
   background-color: #434343;
+  font-size: 16pt;
 }
 
 .buttonLight
@@ -548,6 +550,7 @@ html {
   width: 50%;
   text-align: center;
   font-family: sans-serif;
+  height: 21px
 }
 
 .lengthOfTimeInputCellLeft

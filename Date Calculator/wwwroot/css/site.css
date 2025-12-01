@@ -81,7 +81,10 @@ header
 {
   font-size: 12pt;
   color: gray;
-  margin: 0
+  margin: 0;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 #daysResult
 {
@@ -93,6 +96,9 @@ header
 {
   font-size: 11pt;
   margin: 5px;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 #dateToDateInputContainer, #addSubtractInputContainer, #aboutContainer
 {
@@ -281,6 +287,9 @@ html {
 .textSize12
 {
   font-size: 12pt;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 .tableRowLight

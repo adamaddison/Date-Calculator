@@ -17,8 +17,8 @@
         {
             @for(var i = 0; i < Model.Results.Count; i += 1)
             {
-                @if(i == 0){ <span class="tableRowLight firstItem">@Model.Results[@i]</span> }
-                else{ <span class="tableRowLight">@Model.Results[@i]</span> }
+                @if(i == 0){ <span class="tableRowLight textSize12 firstItem">@Model.Results[@i]</span> }
+                else{ <span class="tableRowLight textSize12">@Model.Results[@i]</span> }
             }
         }
         </div>
@@ -29,7 +29,7 @@
 
                 <div class="infoContainerLight" id="dateContainer">
                     <div class="inputRow inputRowLight lastItem">
-                        <span class="textLight">Date</span>
+                        <span class="textLight textSize12">Date</span>
                         <input type="date" name="Date" id="addSubtractDateField" class="inputLight dateInput" onchange="saveAddSubtractInput()" />
                     </div>
                 </div>
@@ -71,7 +71,7 @@
 
                 <div class="infoContainerLight" id="repeatContainer">
                     <div class="inputRow inputRowLight lastItem">
-                        <span class="textLight">Repeat</span>
+                        <span class="textLight textSize12">Repeat</span>
                         <input type="number" min="0" max="10000" value="0" name="Repeat" id="addSubtractRepeatField" class="inputLight repeatInput" onchange="saveAddSubtractInput()" />
                     </div>
                 </div>

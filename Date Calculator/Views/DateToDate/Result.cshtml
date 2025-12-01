@@ -11,9 +11,9 @@
             @if(Model.WeeksResult.Length != 0 || Model.MonthsResult.Length != 0 || Model.YearsResult.Length != 0)
             {
                 <p id="otherFormats">Other formats</p>
-                @if(Model.WeeksResult.Length != 0){ <span class="tableRowLight">@Model.WeeksResult</span> }
-                @if(Model.MonthsResult.Length != 0){ <span class="tableRowLight">@Model.MonthsResult</span> }
-                @if(Model.YearsResult.Length != 0){ <span class="tableRowLight">@Model.YearsResult</span> }
+                @if(Model.WeeksResult.Length != 0){ <span class="tableRowLight textSize12">@Model.WeeksResult</span> }
+                @if(Model.MonthsResult.Length != 0){ <span class="tableRowLight textSize12">@Model.MonthsResult</span> }
+                @if(Model.YearsResult.Length != 0){ <span class="tableRowLight textSize12">@Model.YearsResult</span> }
             }
         </div>
     </div>
@@ -22,11 +22,11 @@
         <form asp-controller="DateToDate" asp-action="POST">
                 <div class="infoContainerLight">
                     <div class="inputRow inputRowLight">
-                        <span class="textLight">Start Date</span>
+                        <span class="textLight textSize12">Start Date</span>
                         <input type="date" name="startDate" id="startDate" class="inputLight dateInput" onchange="saveDateToDateInput()" />
                     </div>
                     <div class="inputRow inputRowLight lastItem">
-                        <span class="textLight">End Date</span>
+                        <span class="textLight textSize12">End Date</span>
                         <input type="date" name="endDate" id="endDate" class="inputLight dateInput" onchange="saveDateToDateInput()" />
                     </div>
                 </div>

@@ -7,11 +7,11 @@
     <div id="dateToDateResultContainer"">
         <p class="infoBoxHeader">Result</p>
         <div class="infoContainerLight">
-            <p id="errors" class="textLight">Errors:</p>
+            <p id="errors" class="textLight textSize12">Errors:</p>
             <ul>
             @foreach(string error in Model.ErrorMessages)
             {
-                <li class="textLight">@error</li>
+                <li class="textLight textSize12">@error</li>
             }
             </ul>
         </div>
@@ -21,11 +21,11 @@
         <form asp-controller="DateToDate" asp-action="POST">
                 <div class="infoContainerLight">
                     <div class="inputRow inputRowLight">
-                        <span class="textLight">Start Date</span>
+                        <span class="textLight textSize12">Start Date</span>
                         <input type="date" name="startDate" id="startDate" class="inputLight dateInput" onchange="saveDateToDateInput()" />
                     </div>
                     <div class="inputRow inputRowLight lastItem">
-                        <span class="textLight">End Date</span>
+                        <span class="textLight textSize12">End Date</span>
                         <input type="date" name="endDate" id="endDate" class="inputLight dateInput" onchange="saveDateToDateInput()" />
                     </div>
                 </div>

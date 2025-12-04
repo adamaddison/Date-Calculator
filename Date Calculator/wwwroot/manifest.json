@@ -2,9 +2,9 @@
   "name": "Date Calculator",
   "icons": [
     {
-      "src": "favicon.ico",
-      "type": "image/ico",
-      "sizes": "32x32"
+      "src": "favicon.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": "/",

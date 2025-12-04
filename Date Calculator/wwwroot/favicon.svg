@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg" version="1.1">
+
+<defs>
+	<linearGradient id="blueGradient" x1="0" x2="0" y1="0" y2="1">
+		<stop stop-color="#82BEFF" offset="0%" />
+		<stop stop-color="#006EE3" offset="100%" />
+	</linearGradient>
+</defs>
+
+<style>
+	.iconText
+	{
+		font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+		font-size: 90pt;
+		font-weight: bold;
+		fill: white
+	}
+</style>
+
+<rect x="0" y="0" width="512" height="150" fill="url(#blueGradient)" />
+<rect x="0" y="150" width="512" height="362" fill="#fff" />
+
+<circle cx="167" cy="243" r="83" fill="#000" />
+<circle cx="343" cy="243" r="83" fill="#000" />
+<circle cx="167" cy="418" r="83" fill="#000" />
+<circle cx="343" cy="418" r="83" fill="#c99400" />
+
+<polygon points="155,360 155,406 109,406 109,430 155,430 155,476 179,476 179,430 225,430 225,406 179,406 179,360" fill="#fff" transform="rotate(-45, 167, 418)" />
+
+<polygon points="155,185 155,231 109,231 109,255 155,255 155,301 179,301 179,255 225,255 225,231 179,231 179,185" fill="#fff" />
+
+<polygon points="285,231 285,255 401,255 401,231" fill="#fff" />
+
+<polygon points="285,386 285,410 401,410 401,386" fill="#fff" />
+<polygon points="285,426 285,450 401,450 401,426" fill="#fff" />
+
+<!--
+<polygon points="285,382 285,406 401,406 401,382" fill="#fff" />
+<polygon points="285,430 285,454 401,454 401,430" fill="#fff" />
+-->
+
+<text x="125" y="110" class="iconText">July</text>
+
+</svg>

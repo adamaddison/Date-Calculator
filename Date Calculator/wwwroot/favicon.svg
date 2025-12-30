@@ -15,7 +15,8 @@
 		font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 		font-size: 90pt;
 		font-weight: bold;
-		fill: white
+		fill: white;
+		letter-spacing: 4px
 	}
 </style>
 
@@ -25,7 +26,7 @@
 <circle cx="167" cy="243" r="83" fill="#000" />
 <circle cx="343" cy="243" r="83" fill="#000" />
 <circle cx="167" cy="418" r="83" fill="#000" />
-<circle cx="343" cy="418" r="83" fill="#c99400" />
+<circle cx="343" cy="418" r="83" fill="#e68600" />
 
 <polygon points="155,360 155,406 109,406 109,430 155,430 155,476 179,476 179,430 225,430 225,406 179,406 179,360" fill="#fff" transform="rotate(-45, 167, 418)" />
 
@@ -41,6 +42,6 @@
 <polygon points="285,430 285,454 401,454 401,430" fill="#fff" />
 -->
 
-<text x="125" y="110" class="iconText">July</text>
+<text x="105" y="115" class="iconText">JULY</text>
 
 </svg>
